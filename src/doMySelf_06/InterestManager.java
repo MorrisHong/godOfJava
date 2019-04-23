@@ -3,8 +3,15 @@ package doMySelf_06;
 public class InterestManager {
 	public static void main(String[] args) {
 		InterestManager interestM = new InterestManager();
-		double returnMoney = interestM.calculateAmount(365, 1000000 * 365);
-		System.out.println(returnMoney);
+
+		int day = 365;
+		long amount = 0;
+		for(int i = 1; i <= day; i++) {
+			amount += 1_000_000L;
+		}
+		double total = interestM.calculateAmount(day, amount);
+		System.out.println(total);
+		
 	}
 	
 	public double getInterestRate(int day) {
@@ -24,8 +31,8 @@ public class InterestManager {
 	
 	public double calculateAmount(int day, long amount) {
 		double interest = getInterestRate(day);
-		double returnMoney = amount * ( interest / 100 );
-		
-		return returnMoney;
+		double interestAmount = amount * ( interest / 100 );
+		double totalAmount = interestAmount + amount;
+		return totalAmount;
 	}
 }
