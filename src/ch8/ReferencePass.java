@@ -13,6 +13,10 @@ public class ReferencePass {
 		System.out.println("a="+a);
 		System.out.println("b="+b);
 		passByValue(a,b);
+		//after passByValue()
+		System.out.println("after passByValue");
+		System.out.println("a="+a);
+		System.out.println("b="+b);
 	}
 	public void passByValue(int a, String b) {
 		a = 20;
