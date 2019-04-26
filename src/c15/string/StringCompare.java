@@ -9,8 +9,37 @@ public class StringCompare {
 				"경기도 성남시 분당구 정자동",
 				"서울시 구로구 개봉동"
 		};
-		sample.containsAddress(addresses);
-		
+		sample.checkSplit();
+	}
+	public void checkSplit() {
+		String text = "Java technology is both a programming language and a platform.";
+		String[] splitArray = text.split(" ");
+		for(String temp : splitArray) {
+			System.out.println(temp);
+		}
+	}
+	public void checkSubstring() {
+		String text = "Java technology";
+		String technology = text.substring(5);
+		System.out.println(technology);
+		String tech = text.substring(5, 5+4);
+		System.out.println(tech);
+	}
+	public void checkLastIndexOf() {
+		String text = "Java technology is both a programming language and a platform.";
+		System.out.println(text.lastIndexOf('a'));
+		System.out.println(text.lastIndexOf("a "));
+		System.out.println(text.lastIndexOf('a', 20));
+		System.out.println(text.lastIndexOf("a ", 20));
+		System.out.println(text.lastIndexOf('z'));
+	}
+	public void checkIndexOf() {
+		String text = "Java technology is both a programming language and a platform.";
+		System.out.println(text.indexOf('a'));
+		System.out.println(text.indexOf("a "));
+		System.out.println(text.indexOf('a', 20));
+		System.out.println(text.indexOf("a ", 20));
+		System.out.println(text.indexOf('z'));
 		
 	}
 	public void containsAddress(String[] addresses) {
